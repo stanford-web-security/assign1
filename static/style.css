@@ -1,0 +1,91 @@
+:root {
+  --black: #34363B;
+  --dark-grey: #A9B0C3;
+  --light-grey: #DEE7FF;
+  --white: #FFFFFF;
+  --green: #58FF8B;
+  --red: #FF6E57;
+  --yellow: #FFE25F;
+  --blue: #61C3FF;
+}
+
+a:link, a:visited {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+body {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.strong {
+  font-weight: bold;
+}
+
+nav {
+  font-size: 14px;
+  line-height: 1.5em;
+  background-color: var(--green);
+  color: var(--black);
+  text-transform: uppercase;
+  margin: 4ch;
+  padding: 2ch;
+  width: 50ch;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  user-select: none;
+}
+
+nav a:link, nav a:visited {
+  color: inherit;
+}
+
+nav a:hover, nav a:active {
+  text-decoration: inherit;
+}
+
+nav > * {
+  padding: 1px 6px;
+  display: block;
+}
+
+nav .exercise:hover {
+  color: var(--green);
+  background-color: var(--black);
+}
+
+nav .exercise::before {
+  content: '» ';
+}
+
+nav .exercise.done::after {
+  content: ' [done]';
+  float: right;
+}
+
+nav .title {
+  font-weight: bold;
+}
+
+article {
+  margin: 4ch 4ch 4ch 62ch;
+}
+
+iframe {
+  height: 450px;
+  min-height: 350px;
+  max-height: 80vh;
+
+  width: 700px;
+  min-width: 600px;
+  max-width: 100%;
+
+  resize: both;
+}

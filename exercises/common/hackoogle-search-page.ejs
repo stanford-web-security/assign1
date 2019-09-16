@@ -1,0 +1,29 @@
+<%- include('head') -%>
+
+<div class='search-page'>
+  <div class='header clearfix'>
+    <h2 class='logo'>
+      <a href='/'>
+        <%- include('hackoogle-logo') %>
+      </a>
+    </h2>
+
+    <form action='/search'>
+      <input class='search' type='text' name='q' value='<%= q %>' />
+      <button type='submit'>Search</button>
+    </form>
+  </div>
+
+  <h3>Results for <%- q %>:</h3>
+
+  <div class='results'>
+    <% results.forEach(result => { %>
+      <p class='result'>
+        <a class='title' href='<%= result.url %>'><%= result.title %></a>
+        <a class='link' href='<%= result.url %>'><%= result.url %></a>
+      </p>
+    <% }) %>
+  </div>
+</div>
+
+<%- include('foot') -%>

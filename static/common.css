@@ -1,0 +1,74 @@
+.clearfix:before,
+.clearfix:after   { content: " "; display: table; }
+.clearfix:after   { clear: both; }
+.clearfix         { *zoom: 1; }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFFFFF;
+  font-family: monospace;
+  overflow-y: scroll;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Share Tech Mono', monospace;
+  margin: 1em 0;
+}
+
+iframe {
+  border: 1px solid #999;
+}
+
+.iframeNav {
+  background-color: #f6f6f6;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #FFF;
+  border-bottom: 1px solid #ddd;
+}
+
+.iframeNav .home, .iframeNav .urlForm {
+  padding: 5px 10px;
+  display: block;
+  float: left;
+}
+
+.iframeNav .home {
+  background: center url('/home.png') no-repeat;
+  background-size: 26px;
+  opacity: 0.75;
+  height: 40px;
+  cursor: pointer;
+  width: 40px;
+}
+
+.iframeNav .urlForm {
+  width: calc(100% - 40px);
+  height: 40px;
+  padding-left: 0;
+}
+
+.iframeNav .url {
+  font-size: 13px;
+  border-radius: 9999px;
+  border: 1px solid #e0e0e0;
+  background-color: #e0e0e0;
+  padding: 6px 12px;
+  width: 100%;
+}
+
+.iframeNav .url:focus, .iframeNav .url:active {
+  border: 1px solid #333;
+  background-color: #fff;
+  outline: 0;
+}
+
+.root {
+  padding-top: 40px;
+}

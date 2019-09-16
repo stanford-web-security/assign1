@@ -1,0 +1,103 @@
+:root {
+  --blue: #4285F4;
+  --green: #34A853;
+  --yellow: #FBBC05;
+  --red: #EA4335;
+}
+
+body {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.search {
+  border-radius: 9999px;
+  outline: none;
+  border: 2px solid black;
+  font-size: 16px;
+  padding: 5px 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search:focus, .search:active {
+  border: 2px solid var(--blue);
+}
+
+button {
+  font-size: 16px;
+  margin: 15px 0;
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.green {
+  color: var(--green);
+}
+
+.yellow {
+  color: var(--yellow);
+}
+
+.red {
+  color: var(--red);
+}
+
+.home-page {
+  text-align: center;
+}
+
+.search-page {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.search-page .header > * {
+  float: left;
+}
+
+.search-page .logo {
+  width: 130px;
+  margin: 15px 0;
+}
+
+.search-page .logo a {
+  text-decoration: none;
+}
+
+.search-page form {
+  width: calc(100% - 130px);
+}
+
+.search-page input {
+  width: calc(100% - 110px);
+}
+
+.search-page button {
+  width: 100px;
+}
+
+.search-page .result {
+  margin: 20px 0;
+}
+
+.search-page .result .link {
+  color: green;
+  display: block;
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+
+.search-page .result .title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a0dab;
+  text-decoration: none;
+}
