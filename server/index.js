@@ -1,8 +1,9 @@
 const appConfig = require('application-config')
 const express = require('express')
-const html = require('remark-html')
-const recommended = require('remark-preset-lint-recommended')
 const remark = require('remark')
+const remarkHighlight = require('remark-highlight.js')
+const remarkHtml = require('remark-html')
+const remarkRecommended = require('remark-preset-lint-recommended')
 const Router = require('express-promise-router')
 const { join } = require('path')
 const { promisify } = require('util')
@@ -72,8 +73,9 @@ function init () {
     }
 
     file += await remark()
-      .use(recommended)
-      .use(html)
+      .use(remarkRecommended)
+      .use(remarkHighlight)
+      .use(remarkHtml)
       .process(problemMd)
 
     res

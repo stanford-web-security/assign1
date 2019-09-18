@@ -16,6 +16,7 @@
     "express-promise-router": "^3.0.3",
     "got": "^9.6.0",
     "remark": "^11.0.1",
+    "remark-highlight.js": "^5.1.1",
     "remark-html": "^10.0.0",
     "remark-preset-lint-recommended": "^3.0.3"
   },

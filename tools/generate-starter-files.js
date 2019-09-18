@@ -15,4 +15,4 @@ exercises.forEach(exercise => {
   output += `# ${exercise.name}\n\n\`\`\`\nTODO: Replace this with your solution.\n\`\`\`\n\n`
 })
 
-writeFileSync(join(ROOT_PATH, 'src', 'INPUTS.md'), output)
+writeFileSync(join(ROOT_PATH, 'src', 'SOLUTIONS.md'), output)
