@@ -70,7 +70,7 @@ nav .exercise::before {
 }
 
 nav .exercise.done::after {
-  content: ' [done]';
+  content: ' ✓';
   float: right;
 }
 

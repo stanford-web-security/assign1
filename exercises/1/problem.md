@@ -10,11 +10,9 @@ You decide to check out their website and look for a Reflected XSS vulnerability
 
 ## Goal
 
-Find the XSS vulnerability in your competitor's site.
+Find a way to inject a `<script>` tag into your competitor's site. Once you find a way to execute code on their site, you should call the `success()` function. If you've done it correctly, you should see a browser alert telling you that you succeeded.
 
 <iframe src='http://localhost:4010'></iframe>
-
-Once you find a way to execute code on their site, you should call the `success()` function. If you've done it correctly, you should see a browser alert telling you that you succeeded.
 
 Since this is a Reflected XSS attack, take note of the fact that the URL of the victim site contains a URL-encoded version of your "attack input".
 

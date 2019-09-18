@@ -8,14 +8,17 @@ They attempt to sanitize the search query with a call to [`String.prototype.repl
 router.get('/search', async (req, res) => {
   let q = req.query.q
   if (q == null) q = ''
-  const results = await getResults(q)
 
   q = q.replace(/script/i, '')
+
+  const results = await getResults(q)
   res.render('hackoogle-search-page', { q, results })
 })
 ```
 
-You should be able to make a small change to your "attack input" from the last exercise and it should continue to work against their users. Let the pwnage continue!
+## Goal
+
+You should be able to make a small change to your "attack input" from the last exercise and your Reflected XSS attack should continue to work against their users. Unleash more `<script>` pwnage!
 
 <iframe src='http://localhost:4020'></iframe>
 

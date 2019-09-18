@@ -10,7 +10,6 @@ router.get('/', async (req, res) => {
 router.get('/search', async (req, res) => {
   let q = req.query.q
   if (q == null) q = ''
-  const results = await getResults(q)
 
   let oldQ
   while (q !== oldQ) {
@@ -18,5 +17,6 @@ router.get('/search', async (req, res) => {
     q = q.replace(/script/gi, '')
   }
 
+  const results = await getResults(q)
   res.render('hackoogle-search-page', { q, results })
 })

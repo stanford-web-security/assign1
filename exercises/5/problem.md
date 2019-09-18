@@ -1,4 +1,24 @@
-# oh hi
+They're on to you! They saw your last attack in their server logs and have updated their input sanitization code once again.
+
+```js
+router.get('/search', async (req, res) => {
+  let q = req.query.q
+  if (q == null) q = ''
+
+  let oldQ
+  while (q !== oldQ) {
+    oldQ = q
+    q = q.replace(/script|SCRIPT/g, '')
+  }
+
+  const results = await getResults(q)
+  res.render('hackoogle-search-page', { q, results })
+})
+```
+
+## Goal
+
+Can you think of a way to defeat their improved sanitization code and get your `<script>` tag into the page?
 
 <iframe src='http://localhost:4050'></iframe>
 

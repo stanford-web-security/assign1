@@ -62,7 +62,7 @@ function init () {
 
     const exerciseName = exercises.find(exercise => exercise.id === id).name
 
-    let file = `<h1>${exerciseName}</h1>\n`
+    let file = `<h1>Exercise ${id} – ${exerciseName}</h1>\n`
 
     let problemMd
     try {
@@ -80,7 +80,7 @@ function init () {
 
     res
       .render('layout', {
-        title: `Assignment 1 – Exercise ${id}`,
+        title: `Exercise ${id} – ${exerciseName}`,
         content: String(file)
       })
   })
