@@ -1,39 +1,46 @@
 :root {
-  --black: #34363B;
-  --dark-grey: #A9B0C3;
+  --black: #282828;
+  --dark-grey: #707070;
+  --grey: #A9B0C3;
   --light-grey: #DEE7FF;
   --white: #FFFFFF;
   --green: #58FF8B;
   --red: #FF6E57;
   --yellow: #FFE25F;
-  --blue: #61C3FF;
+  --blue: #009EFF;
 }
 
-a:link, a:visited {
-  color: var(--blue);
+main a:link, main a:visited {
+  color: inherit;
+  background-color: var(--blue);
   text-decoration: none;
+  padding: 0 4px 1px 4px;
+  border-radius: 3px;
 }
 
-a:hover, a:active {
-  text-decoration: underline;
+main a:hover, main a:active {
+  color: var(--black);
+  background-color: var(--yellow);
 }
 
 body {
   color: var(--white);
   background-color: var(--black);
+  font-size: 14px;
 }
 
-.strong {
-  font-weight: bold;
+p {
+  line-height: 1.3em;
+  margin: 1.3em 0;
 }
 
 nav {
   font-size: 14px;
-  line-height: 1.5em;
+  line-height: 1.3em;
   background-color: var(--green);
   color: var(--black);
   text-transform: uppercase;
-  margin: 4ch;
+  margin: 5ch;
   padding: 2ch;
   width: 50ch;
   position: fixed;
@@ -45,20 +52,17 @@ nav {
 
 nav a:link, nav a:visited {
   color: inherit;
+  text-decoration: none;
 }
 
 nav a:hover, nav a:active {
-  text-decoration: inherit;
+  color: var(--green);
+  background-color: var(--black);
 }
 
 nav > * {
   padding: 1px 6px;
   display: block;
-}
-
-nav .exercise:hover {
-  color: var(--green);
-  background-color: var(--black);
 }
 
 nav .exercise::before {
@@ -74,8 +78,13 @@ nav .title {
   font-weight: bold;
 }
 
-article {
-  margin: 4ch 4ch 4ch 62ch;
+nav .disabled {
+  opacity: 0.5;
+}
+
+main {
+  margin: 0ch 5ch 10ch 60ch;
+  max-width: 80ch;
 }
 
 iframe {
@@ -88,4 +97,10 @@ iframe {
   max-width: 100%;
 
   resize: both;
+}
+
+code {
+  border-radius: 3px;
+  background-color: var(--dark-grey);
+  padding: 0 4px 1px 4px;
 }

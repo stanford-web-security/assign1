@@ -1,5 +1,5 @@
-const { createServer } = require('../../common/server')
-const { getResults } = require('../../common/hackoogle')
+const { createServer } = require('../common/server')
+const { getResults } = require('../common/hackoogle')
 
 const { router } = createServer(4060, __dirname)
 

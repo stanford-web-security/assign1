@@ -12,8 +12,13 @@ window.addEventListener('message', async e => {
 
   const id = Number(window.location.pathname.slice(1))
 
-  const $navExercise = document.querySelector(`[data-exercise='${id}']`)
-  $navExercise.classList.add('done')
+  const $exerciseLink = document.querySelector(`[data-exercise='${id}']`)
+  $exerciseLink.classList.add('done')
+
+  const $nextExerciseLink = document.querySelector(`[data-exercise='${id + 1}']`)
+  if ($nextExerciseLink) {
+    $nextExerciseLink.classList.remove('disabled')
+  }
 
   let res
   try {

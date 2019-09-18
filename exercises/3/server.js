@@ -1,7 +1,7 @@
-const { createServer } = require('../../common/server')
-const { getResults } = require('../../common/hackoogle')
+const { createServer } = require('../common/server')
+const { getResults } = require('../common/hackoogle')
 
-const { router } = createServer(4020, __dirname)
+const { router } = createServer(4030, __dirname)
 
 router.get('/', async (req, res) => {
   res.render('hackoogle-home-page')
@@ -12,6 +12,6 @@ router.get('/search', async (req, res) => {
   if (q == null) q = ''
   const results = await getResults(q)
 
-  q = q.replace(/script/i, '')
+  q = q.replace(/script/gi, '')
   res.render('hackoogle-search-page', { q, results })
 })

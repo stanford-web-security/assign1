@@ -1,0 +1,21 @@
+[
+  { "name": "Journey to the Dark Side", "heading": true },
+
+  { "name": "Welcome" },
+
+  { "name": "Cross Site Scripting into HTML", "heading": true },
+
+  { "name": "Like Taking Candy From a Baby" },
+  { "name": "No Script For You" },
+  { "name": "One More Time, Like You Mean It" },
+  { "name": "I Think You Missed a Case" },
+  { "name": "Let's Mix Things Up" },
+  { "name": "Basic XSS" },
+  { "name": "Basic XSS" },
+  { "name": "Basic XSS" },
+  { "name": "Basic XSS" },
+
+  { "name": "more", "heading": true },
+
+  { "name": "Basic XSS" }
+]

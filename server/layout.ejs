@@ -6,34 +6,36 @@
     <title><%= title %></title>
     <link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap' rel='stylesheet' />
     <link rel='stylesheet' href='/common.css' />
-    <link rel='stylesheet' href='/style.css' />
+    <link rel='stylesheet' href='/workshop.css' />
     <script src='/common.js'></script>
   </head>
 
   <body>
     <div class='root'>
       <nav>
-        <% exercises.forEach(exercise => { %>
-
-          <% if (exercise.heading) { %>
-            <div class='title'><%= exercise.name %></div>
-          <% } else { %>
+        <%_ exercises.forEach(exercise => { _%>
+          <%_ if (exercise.heading) { _%>
+            <div class='title'>
+              <%= exercise.name %>
+            </div>
+          <%_ } else { _%>
+            <%_ let cls = '' _%>
+            <%_ if (exercise.id < config.currentExcercise) cls += ' done' _%>
+            <%_ if (exercise.id > config.currentExcercise) cls += ' disabled' _%>
             <a
               data-exercise='<%= exercise.id %>'
-              class='exercise <%= config[exercise.id] ? 'done' : '' %>'
+              class='exercise <%= cls %>'
               href='/<%= exercise.id %>'
             >
               <%= exercise.name %>
             </a>
-          <% } %>
-
-        <% }) %>
-
+          <%_ } _%>
+        <%_ }) _%>
       </nav>
 
-      <article>
+      <main>
         <%- content %>
-      </article>
+      </main>
     </div>
   </body>
 </html>

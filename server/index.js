@@ -8,18 +8,27 @@ const { join } = require('path')
 const { promisify } = require('util')
 const { readFile } = require('fs').promises
 
-const exercises = require('./exercises.json')
-
-numberExcercises(exercises)
-
 const PORT = 4000
 const ROOT_PATH = join(__dirname, '..')
 const EXERCISES_PATH = join(ROOT_PATH, 'exercises')
 
-const cfg = appConfig(require(join(ROOT_PATH, 'package.json')).name)
-const readConfig = promisify(cfg.read.bind(cfg))
+const pkg = require(join(ROOT_PATH, 'package.json'))
+
+const cfg = appConfig(pkg.name)
+
+const _readConfig = promisify(cfg.read.bind(cfg))
+const readConfig = async function readConfig () {
+  return {
+    // Default config file
+    currentExcercise: 0,
+    ...(await _readConfig())
+  }
+}
 const writeConfig = promisify(cfg.write.bind(cfg))
 const trashConfig = promisify(cfg.trash.bind(cfg))
+
+const exercises = require(join(EXERCISES_PATH, 'exercises.json'))
+numberExcercises(exercises)
 
 init()
 initExercises()
@@ -41,14 +50,7 @@ function init () {
 
   router.use(async (req, res) => {
     res.locals.exercises = exercises
-
-    let config
-    try {
-      config = await readConfig()
-    } catch (err) {
-      config = {}
-    }
-    res.locals.config = config
+    res.locals.config = await readConfig()
 
     return 'next'
   })
@@ -57,16 +59,19 @@ function init () {
     const id = Number(req.params.id)
     if (Number.isNaN(id)) return 'next'
 
+    const exerciseName = exercises.find(exercise => exercise.id === id).name
+
+    let file = `<h1>${exerciseName}</h1>\n`
+
     let problemMd
     try {
       const problemMdPath = join(EXERCISES_PATH, String(id), 'problem.md')
-      console.log(problemMdPath)
       problemMd = await readFile(problemMdPath)
     } catch (err) {
       return 'next'
     }
 
-    const file = await remark()
+    file += await remark()
       .use(recommended)
       .use(html)
       .process(problemMd)
@@ -82,13 +87,11 @@ function init () {
     const id = Number(req.params.id)
     if (Number.isNaN(id)) return 'next'
 
-    let config
-    try {
-      config = await readConfig()
-    } catch (err) {
-      config = {}
+    const config = await readConfig()
+
+    if (id === config.currentExcercise) {
+      config.currentExcercise = id + 1
     }
-    config[id] = true
     await writeConfig(config)
 
     res.send(config)
@@ -118,7 +121,7 @@ async function initExercises () {
     try {
       require(exerciseEntryPoint)
     } catch (err) {
-      console.error(`Could not start server for excercise ${exercise.id}`)
+      console.error(`Could not start server for excercise ${exercise.id}: ${err.message}`)
     }
   })
 }
