@@ -60,28 +60,33 @@ function init () {
     const id = Number(req.params.id)
     if (Number.isNaN(id)) return 'next'
 
-    const exerciseName = exercises.find(exercise => exercise.id === id).name
-
-    let file = `<h1>Exercise ${id} – ${exerciseName}</h1>\n`
+    const { config } = res.locals
 
     let problemMd
     try {
-      const problemMdPath = join(EXERCISES_PATH, String(id), 'problem.md')
+      const problemMdPath = join(getExercisePath(id), 'problem.md')
       problemMd = await readFile(problemMdPath)
     } catch (err) {
       return 'next'
     }
 
-    file += await remark()
-      .use(remarkRecommended)
-      .use(remarkHighlight)
-      .use(remarkHtml)
-      .process(problemMd)
+    const exerciseName = exercises.find(exercise => exercise.id === id).name
+    let content = `<h1>Exercise ${id} – ${exerciseName}</h1>\n`
+
+    if (id > config.currentExcercise) {
+      content += '<p>Please complete the earlier excercises first.</p>\n'
+    } else {
+      content += await remark()
+        .use(remarkRecommended)
+        .use(remarkHighlight)
+        .use(remarkHtml)
+        .process(problemMd)
+    }
 
     res
       .render('layout', {
         title: `Exercise ${id} – ${exerciseName}`,
-        content: String(file)
+        content
       })
   })
 
@@ -119,7 +124,7 @@ function init () {
 async function initExercises () {
   exercises.forEach(exercise => {
     if (!exercise.id) return
-    const exerciseEntryPoint = join(EXERCISES_PATH, String(exercise.id), 'server')
+    const exerciseEntryPoint = join(getExercisePath(exercise.id), 'server')
     try {
       require(exerciseEntryPoint)
     } catch (err) {
@@ -135,4 +140,11 @@ function numberExcercises (exercises) {
     exercise.id = id
     id += 1
   })
+}
+
+function getExercisePath (id) {
+  if (id < 10) id = `0${id}`
+  else id = String(id)
+
+  return join(EXERCISES_PATH, id)
 }
