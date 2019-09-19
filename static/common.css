@@ -20,6 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 
 iframe {
   border: 1px solid #999;
+  background-color: #FFF;
 }
 
 .iframeNav {
@@ -38,7 +39,6 @@ iframe {
   display: block;
   float: left;
 }
-
 
 .iframeNav .home {
   background: center url('/home.png') no-repeat;

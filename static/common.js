@@ -49,7 +49,6 @@ window.addEventListener('message', async e => {
   }
 
   const config = await res.json()
-  console.log(config)
 })
 
 window.addEventListener('load', () => {
