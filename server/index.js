@@ -12,7 +12,12 @@ const { join } = require('path')
 const { promisify } = require('util')
 const { readFile } = require('fs').promises
 
-const argv = minimist(process.argv.slice(2))
+const argv = minimist(process.argv.slice(2), {
+  boolean: ['open'],
+  default: {
+    open: true
+  }
+})
 
 const PORT = 4000
 const ROOT_PATH = join(__dirname, '..')
@@ -127,7 +132,7 @@ function init () {
   app.listen(PORT, '127.0.0.1', () => {
     const url = `http://localhost:${PORT}`
     console.log(`Server running on ${url}`)
-    if (!argv.open) open(url)
+    if (argv.open) open(url)
   })
 }
 
