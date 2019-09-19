@@ -119,3 +119,14 @@ TODO: Replace this with your solution.
 TODO: Replace this with your solution.
 ```
 
+# 19. Short Answer Questions
+
+There are some JavaScript functions that can never safely use untrusted data as input, even if escaped with `htmlEscape()`. For example:
+
+```js
+<script>
+window.setInterval('...EVEN IF YOU ESCAPE UNTRUSTED DATA YOU ARE XSSED HERE...');
+</script>
+```
+
+Why?

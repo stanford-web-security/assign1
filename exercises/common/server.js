@@ -4,6 +4,7 @@ module.exports = {
 
 const express = require('express')
 const Router = require('express-promise-router')
+const bodyParser = require('body-parser')
 const { basename, join } = require('path')
 
 const COMMON_PATH = __dirname
@@ -27,6 +28,8 @@ function createServer (port, serverDirname) {
     res.locals.exerciseId = Number(basename(serverDirname))
     return 'next'
   })
+
+  router.use(bodyParser.urlencoded({ extended: false }))
 
   app.listen(port, '127.0.0.1')
 

@@ -1,0 +1,27 @@
+<%- include('head3') -%>
+
+<div class='guestbook-page'>
+  <h1>
+    <%- include('hackoogle-logo') %>
+  </h1>
+
+  <h2><marquee>Welcome to our Guestbook</marquee></h2>
+
+  <form class='heartBeat' action='/comment' method='POST'>
+    <h2>Post a comment</h2>
+    <input class='commentInput' type='text' name='comment' />
+    <br />
+    <button type='submit'>Submit Comment</button>
+  </form>
+
+  <br><br>
+
+  <h2>Comments</h2>
+  <%_ comments.forEach(comment => { _%>
+    <p>
+      <%- comment %>
+    </p>
+  <%_ }) _%>
+</div>
+
+<%- include('foot') -%>

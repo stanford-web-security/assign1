@@ -1,4 +1,4 @@
-<%- include('head2') -%>
+<%- include('head') -%>
 
 <div class='search-page'>
   <div class='header clearfix'>
@@ -27,5 +27,14 @@
     <% }) %>
   </div>
 </div>
+
+<script>
+  let q = '<%- q %>'
+  window.sendAnalytics({
+    q,
+    screenWidth: window.screen && window.screen.width,
+    screenHeight: window.screen && window.screen.height
+  })
+</script>
 
 <%- include('foot') -%>

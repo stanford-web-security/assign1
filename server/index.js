@@ -149,7 +149,7 @@ function init () {
 
 async function initExercises () {
   exercises.forEach(exercise => {
-    if (!exercise.id) return
+    if (exercise.heading || exercise.server === false) return
     const exerciseEntryPoint = join(getExercisePath(exercise.id), 'server')
     try {
       require(exerciseEntryPoint)

@@ -11,10 +11,10 @@ router.get('/search', async (req, res) => {
   let q = req.query.q
   if (q == null) q = ''
 
+  const rawQ = q
+
   let lang = req.query.lang
   if (lang == null) lang = 'en' // default language: english
-
-  const rawQ = q
 
   const url = new URL(req.url, 'http://example.com')
   const enUrl = new URL(url)
