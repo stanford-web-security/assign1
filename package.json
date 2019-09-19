@@ -45,6 +45,6 @@
     "lint": "standard | snazzy",
     "lint-fix": "standard --fix | snazzy",
     "test": "npm run lint && tape test/*.js | tap-spec",
-    "watch": "nodemon --ext js,json,css,ejs,md"
+    "watch": "nodemon --ext js,json,css,ejs,md -- --no-open"
   }
 }

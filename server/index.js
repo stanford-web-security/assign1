@@ -17,7 +17,7 @@ const EXERCISES_PATH = join(ROOT_PATH, 'exercises')
 
 const pkg = require(join(ROOT_PATH, 'package.json'))
 
-const cfg = appConfig(pkg.name)
+const cfg = appConfig(`cs253-${pkg.name}`)
 
 const _readConfig = promisify(cfg.read.bind(cfg))
 const readConfig = async function readConfig () {

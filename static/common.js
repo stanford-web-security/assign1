@@ -1,17 +1,19 @@
-let successCalledInCurrentTick = false
+let successCalled = false
 
 window.success = () => {
-  console.log(successCalledInCurrentTick)
-  if (successCalledInCurrentTick) return
-  successCalledInCurrentTick = true
-  Promise.resolve().then(() => { successCalledInCurrentTick = false })
-
+  if (successCalled) return
+  successCalled = true
   window.parent.postMessage('success', '*')
 }
 
 window.addEventListener('message', async e => {
   const { data } = e
   if (data !== 'success') return
+
+  if (window.parent === window) {
+    window.alert('Success! HOWEVER... In order to receive credit for this exercise please enter your "attack input" into the inline browser in the problem.')
+    return
+  }
 
   const $exerciseIdInput = document.querySelector('.exercise-id')
   const id = $exerciseIdInput
@@ -37,6 +39,8 @@ window.addEventListener('message', async e => {
         'Content-Type': 'application/json'
       }
     })
+
+    await res.json()
 
     window.alert(`Success! You completed exercise ${id}!`)
   } catch (err) {
