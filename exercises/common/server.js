@@ -4,7 +4,7 @@ module.exports = {
 
 const express = require('express')
 const Router = require('express-promise-router')
-const { join } = require('path')
+const { basename, join } = require('path')
 
 const COMMON_PATH = __dirname
 const ROOT_PATH = join(__dirname, '..', '..')
@@ -24,6 +24,7 @@ function createServer (port, serverDirname) {
 
   router.use(async (req, res) => {
     res.set('X-XSS-Protection', '0')
+    res.locals.exerciseId = Number(basename(serverDirname))
     return 'next'
   })
 

@@ -1,8 +1,11 @@
+let successCalledInCurrentTick = false
+
 window.success = () => {
-  if (window.parent === window) {
-    window.alert('Success!')
-    return
-  }
+  console.log(successCalledInCurrentTick)
+  if (successCalledInCurrentTick) return
+  successCalledInCurrentTick = true
+  Promise.resolve().then(() => { successCalledInCurrentTick = false })
+
   window.parent.postMessage('success', '*')
 }
 
@@ -10,10 +13,15 @@ window.addEventListener('message', async e => {
   const { data } = e
   if (data !== 'success') return
 
-  const id = Number(window.location.pathname.slice(1))
+  const $exerciseIdInput = document.querySelector('.exercise-id')
+  const id = $exerciseIdInput
+    ? Number($exerciseIdInput.value)
+    : Number(window.location.pathname.slice(1))
 
   const $exerciseLink = document.querySelector(`[data-exercise='${id}']`)
-  $exerciseLink.classList.add('done')
+  if ($exerciseLink) {
+    $exerciseLink.classList.add('done')
+  }
 
   const $nextExerciseLink = document.querySelector(`[data-exercise='${id + 1}']`)
   if ($nextExerciseLink) {
@@ -46,12 +54,26 @@ window.addEventListener('load', () => {
 })
 
 function initIframeNav () {
+  if (window.parent === window) {
+    // Running in top-level window
+    const $iframeNav = document.querySelector('.iframeNav')
+    $iframeNav.style.display = 'none'
+  }
+
   const $url = document.querySelector('.iframeNav .url')
   $url.value = window.location
 
   const $home = document.querySelector('.iframeNav .home')
   $home.addEventListener('click', e => {
     window.location = window.location.origin
+  })
+
+  const $newtab = document.querySelector('.iframeNav .newtab')
+  $newtab.addEventListener('click', e => {
+    const a = document.createElement('a')
+    a.href = window.location
+    a.target = '_blank'
+    a.click()
   })
 
   const $urlForm = document.querySelector('.iframeNav .urlForm')

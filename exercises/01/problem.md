@@ -16,7 +16,7 @@ Find a way to inject a `<script>` tag into your competitor's site. Once you find
 
 Since this is a Reflected XSS attack, take note of the fact that the URL of the victim site contains a URL-encoded version of your "attack input".
 
-If you were truly evil, you could share that URL on social media and when innocent users click the link, your attack code should execute in their browsers, wreaking havoc. You could exfiltrate their cookies and log in as them, or take actions on their account, inluding deleting it. They'll have trouble raising their next round from investors when their user numbers start going down and to the right! 🤣📉🤣  Noobs!
+If you were truly evil, you could share that URL on social media and when innocent users click the link, your attack code should execute in their browsers, wreaking havoc. You could exfiltrate their cookies and log in as them, or take actions on their account, including deleting it. They'll have trouble raising their next round from investors when their user numbers start going down and to the right! 🤣📉🤣  Noobs!
 
 You should try copying this URL and opening it into a new tab and confirm that your attack code runs immediately when the page is loaded. This is the power of Reflected XSS!
 

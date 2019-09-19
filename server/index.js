@@ -1,6 +1,8 @@
 const appConfig = require('application-config')
 const express = require('express')
+const open = require('open')
 const remark = require('remark')
+const remarkExternalLinks = require('remark-external-links')
 const remarkHighlight = require('remark-highlight.js')
 const remarkHtml = require('remark-html')
 const remarkRecommended = require('remark-preset-lint-recommended')
@@ -79,6 +81,7 @@ function init () {
       content += await remark()
         .use(remarkRecommended)
         .use(remarkHighlight)
+        .use(remarkExternalLinks)
         .use(remarkHtml)
         .process(problemMd)
     }
@@ -118,7 +121,11 @@ function init () {
       })
   })
 
-  app.listen(PORT, '127.0.0.1')
+  app.listen(PORT, '127.0.0.1', () => {
+    const url = `http://localhost:${PORT}`
+    console.log(`Server running on ${url}`)
+    open(url)
+  })
 }
 
 async function initExercises () {

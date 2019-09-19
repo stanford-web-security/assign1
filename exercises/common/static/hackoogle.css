@@ -101,3 +101,7 @@ button {
   color: #1a0dab;
   text-decoration: none;
 }
+
+.competition img {
+  width: 150px;
+}

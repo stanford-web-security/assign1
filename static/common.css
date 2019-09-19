@@ -33,25 +33,39 @@ iframe {
   border-bottom: 1px solid #ddd;
 }
 
-.iframeNav .home, .iframeNav .urlForm {
-  padding: 5px 10px;
+.iframeNav .home, .iframeNav .newtab, .iframeNav .urlForm {
+  padding: 5px 5px;
   display: block;
   float: left;
 }
 
+
 .iframeNav .home {
   background: center url('/home.png') no-repeat;
   background-size: 26px;
-  opacity: 0.75;
+  opacity: 0.7;
+  height: 40px;
+  cursor: pointer;
+  width: 40px;
+  margin-left: 5px;
+}
+
+.iframeNav .newtab {
+  background: center url('/newtab.png') no-repeat;
+  background-size: 22px;
+  opacity: 0.7;
   height: 40px;
   cursor: pointer;
   width: 40px;
 }
 
+.iframeNav .home:hover, .iframeNav .newtab:hover {
+  opacity: 1;
+}
+
 .iframeNav .urlForm {
-  width: calc(100% - 40px);
+  width: calc(100% - 85px);
   height: 40px;
-  padding-left: 0;
 }
 
 .iframeNav .url {
