@@ -8,6 +8,7 @@ const remarkHighlight = require('remark-highlight.js')
 const remarkHtml = require('remark-html')
 const remarkRecommended = require('remark-preset-lint-recommended')
 const Router = require('express-promise-router')
+const cors = require('cors')
 const { join } = require('path')
 const { promisify } = require('util')
 const { readFile } = require('fs').promises
@@ -39,7 +40,6 @@ const writeConfig = promisify(cfg.write.bind(cfg))
 const trashConfig = promisify(cfg.trash.bind(cfg))
 
 const exercises = require(join(EXERCISES_PATH, 'exercises.json'))
-numberExcercises(exercises)
 
 init()
 initExercises()
@@ -101,7 +101,18 @@ function init () {
       })
   })
 
-  router.post('/success/:id', async (req, res) => {
+  const corsOpts = {
+    origin: function (origin, cb) {
+      const url = new URL(origin)
+      if (url.hostname === 'localhost') {
+        cb(null, true)
+      } else {
+        cb(new Error('Not allowed by CORS'))
+      }
+    }
+  }
+
+  router.post('/success/:id', cors(corsOpts), async (req, res) => {
     const id = Number(req.params.id)
     if (Number.isNaN(id)) return 'next'
 
@@ -145,15 +156,6 @@ async function initExercises () {
     } catch (err) {
       console.error(`Could not start server for excercise ${exercise.id}: ${err.message}`)
     }
-  })
-}
-
-function numberExcercises (exercises) {
-  let id = 0
-  exercises.forEach(exercise => {
-    if (exercise.heading) return
-    exercise.id = id
-    id += 1
   })
 }
 

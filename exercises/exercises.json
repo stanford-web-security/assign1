@@ -1,21 +1,35 @@
 [
-  { "name": "Journey to the Dark Side", "heading": true },
+  { "heading": true, "name": "Journey to the Dark Side" },
 
-  { "name": "Welcome" },
+  { "id": 0, "name": "Welcome" },
 
-  { "name": "Cross Site Scripting into HTML", "heading": true },
+  { "heading": true, "name": "Cross Site Scripting into HTML tags" },
 
-  { "name": "A Truly Disruptive Startup" },
-  { "name": "No Script Allowed" },
-  { "name": "One More Time, Like You Mean It" },
-  { "name": "An Open-and-Shut Case" },
-  { "name": "Time to Mix Things Up" },
-  { "name": "A Picture is Worth a Thousand Words" },
-  { "name": "Between a Rock And a Hard Place" },
-  { "name": "Angle of Death" },
-  { "name": "Basic XSS" },
+  { "id": 1, "name": "A Truly Disruptive Startup" },
+  { "id": 2, "name": "No Script Allowed" },
+  { "id": 3, "name": "One More Time, Like You Mean It" },
+  { "id": 4, "name": "An Open-and-Shut Case" },
+  { "id": 5, "name": "Time to Mix Things Up" },
+  { "id": 6, "name": "A Picture is Worth a Thousand Words" },
+  { "id": 7, "name": "Between a Rock And a Hard Place" },
+  { "id": 8, "name": "Angle of Death" },
+  { "id": 9, "name": "Finally, Some Working Code" },
 
-  { "name": "more", "heading": true },
+  { "heading": true, "name": "Cross Site Scripting into HTML Attributes" },
 
-  { "name": "Basic XSS" }
+  { "id": 10, "name": "The Attributes of Success" },
+  { "id": 11, "name": "replace first double quote" },
+  { "id": 12, "name": "replace all double quotes" },
+  { "id": 13, "name": "no quotes around attribute, lang param" },
+
+  { "heading": true, "name": "Cross Site Scripting into <script> tags" },
+
+  { "id": 14, "name": "full html escape" },
+  { "id": 15, "name": "replace </" },
+
+  { "heading": true, "name": "Stored XSS" },
+
+  { "id": 16, "name": "TODO" },
+  { "id": 17, "name": "TODO" }
+
 ]

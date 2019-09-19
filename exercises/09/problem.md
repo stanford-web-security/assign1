@@ -1,4 +1,4 @@
-Your competitor is finally fed up with the lackluster results from the UC Berkeley graduate and decide to hire a student who has completed CS 253: Web Security. They are able to quickly implement a foolproof `htmlElementEscape()` function which defeats your shenanigans once and for all.
+Your competitor is fed up with the lackluster results from the UC Berkeley graduate and decide to hire a student who has completed [CS 253: Web Security](https://cs253.stanford.edu) at Stanford instead. They are able to quickly implement a foolproof `htmlElementEscape()` function which defeats your shenanigans once and for all.
 
 Please read the code for `htmlElementEscape()` and ensure you understand how it works in detail.
 
@@ -14,7 +14,7 @@ function htmlElementEscape (str) {
 }
 ```
 
-Now all your competitor needs to do is call this function whenever they put untrusted data directly into the HTML body somewhere. This includes inside normal tags like `div`, `p`, `b`, `td`, etc.
+Now all your competitor needs to do is call this function whenever they put untrusted data directly into the HTML body somewhere, i.e. tags like `div`, `p`, `b`, `td`, etc.
 
 So, their updated route handler code looks like this now:
 
@@ -30,20 +30,6 @@ router.get('/search', async (req, res) => {
 })
 ```
 
-Dang, it seems we're out of luck.
+It seems like we're out of luck for now...
 
-But around the same time that your competitor deployed the new version of their site that uses `htmlElementEscape()` to fix the vulnerability once and for all, you noticed that they also released a new feature. They call the new feature "Competitor Comparison" and it includes links to competitor search engines so that users can compare search results between all the competitors.
-
-They appear to be using the `htmlElementEscape()` function to generate these links so they're guaranteed to be safe. Or are they?
-
-## Goal
-
-Find the XSS vulnerability. You can use any HTML that you want.
-
-## Tip
-
-You may need to look at the HTML source of the `<iframe>`.
-
-<iframe src='http://localhost:4090'></iframe>
-
-Before you move on to the next exercise, remember to copy your "attack input" into the `SOLUTIONS.md` file.
+<a href='#' onclick="window.postMessage('success', '*')">Click this link to call success()</a> and complete this exercise.

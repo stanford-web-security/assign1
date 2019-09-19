@@ -4,10 +4,10 @@ window.success = () => {
   if (successCalled) return
   successCalled = true
 
-  if (window.parent === window) {
-    window.alert('Success! HOWEVER... In order to receive credit for this exercise please enter your "attack input" into the inline browser in the problem.')
-    return
-  }
+  // if (window.parent === window) {
+  //   window.alert('Success! HOWEVER... In order to receive credit for this exercise please enter your "attack input" into the inline browser in the problem.')
+  //   return
+  // }
 
   window.parent.postMessage('success', '*')
 }
@@ -31,24 +31,20 @@ window.addEventListener('message', async e => {
     $nextExerciseLink.classList.remove('disabled')
   }
 
-  let res
   try {
-    res = await window.fetch(`/success/${id}`, {
+    await window.fetch(`http://localhost:4000/success/${id}`, {
       method: 'POST',
+      mode: 'no-cors',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       }
     })
 
-    await res.json()
-
     window.alert(`Success! You completed exercise ${id}!`)
   } catch (err) {
     window.alert(`Error! It looks like you completed excercise ${id} but the result could not be saved. Is the server still running?`)
   }
-
-  const config = await res.json()
 })
 
 window.addEventListener('load', () => {

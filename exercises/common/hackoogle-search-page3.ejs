@@ -1,0 +1,51 @@
+<%- include('head') -%>
+
+<div class='search-page'>
+  <div class='header clearfix'>
+    <h2 class='logo'>
+      <a href='/'>
+        <%- include('hackoogle-logo') %>
+      </a>
+    </h2>
+
+    <form action='/search'>
+      <input class='search' type='text' name='q' value='<%= rawQ %>' />
+      <button type='submit'>Search</button>
+    </form>
+  </div>
+
+  <h3>Results for <%= rawQ %>:</h3>
+
+  <p>Our results are the best! If you don't believe us check out the competition:</p>
+
+  <ul class='competition'>
+    <li>
+      <a href="https://www.youtube.com/watch?v=pxw-5qfJ1dk" target="_blank">
+        <img src="Stanfoogle.gif" alt="Search for <%- q %> on Stanfoogle" />
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.youtube.com/watch?v=kxopViU98Xo" target="_blank">
+        <img src="cornelly.png" alt="Search for <%- q %> on Cornell.ly" />
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.youtube.com/watch?v=SQoA_wjmE9w" target="_blank">
+        <img src="hrvrdio.png" alt='Search for <%- q %> on Hrvrd.io' />
+      </a>
+    </li>
+  </ul>
+
+  <div class='results'>
+    <% results.forEach(result => { %>
+      <p class='result'>
+        <a class='title' href='<%= result.url %>'><%= result.title %></a>
+        <a class='link' href='<%= result.url %>'><%= result.url %></a>
+      </p>
+    <% }) %>
+  </div>
+</div>
+
+<%- include('foot') -%>
