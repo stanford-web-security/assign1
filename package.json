@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "express-promise-router": "^3.0.3",
     "got": "^9.6.0",
+    "minimist": "^1.2.0",
     "open": "^6.4.0",
     "remark": "^11.0.1",
     "remark-external-links": "^5.0.0",

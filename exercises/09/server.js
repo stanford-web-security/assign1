@@ -11,10 +11,11 @@ router.get('/search', async (req, res) => {
   let q = req.query.q
   if (q == null) q = ''
 
+  const rawQ = q
   q = htmlElementEscape(q)
 
   const results = await getResults(q)
-  res.render('hackoogle-search-page-2', { q, results })
+  res.render('hackoogle-search-page-2', { q, rawQ, results })
 })
 
 function htmlElementEscape (str) {

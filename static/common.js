@@ -3,17 +3,18 @@ let successCalled = false
 window.success = () => {
   if (successCalled) return
   successCalled = true
+
+  if (window.parent === window) {
+    window.alert('Success! HOWEVER... In order to receive credit for this exercise please enter your "attack input" into the inline browser in the problem.')
+    return
+  }
+
   window.parent.postMessage('success', '*')
 }
 
 window.addEventListener('message', async e => {
   const { data } = e
   if (data !== 'success') return
-
-  if (window.parent === window) {
-    window.alert('Success! HOWEVER... In order to receive credit for this exercise please enter your "attack input" into the inline browser in the problem.')
-    return
-  }
 
   const $exerciseIdInput = document.querySelector('.exercise-id')
   const id = $exerciseIdInput

@@ -1,5 +1,6 @@
 const appConfig = require('application-config')
 const express = require('express')
+const minimist = require('minimist')
 const open = require('open')
 const remark = require('remark')
 const remarkExternalLinks = require('remark-external-links')
@@ -10,6 +11,8 @@ const Router = require('express-promise-router')
 const { join } = require('path')
 const { promisify } = require('util')
 const { readFile } = require('fs').promises
+
+const argv = minimist(process.argv.slice(2))
 
 const PORT = 4000
 const ROOT_PATH = join(__dirname, '..')
@@ -124,7 +127,7 @@ function init () {
   app.listen(PORT, '127.0.0.1', () => {
     const url = `http://localhost:${PORT}`
     console.log(`Server running on ${url}`)
-    open(url)
+    if (!argv.open) open(url)
   })
 }
 
