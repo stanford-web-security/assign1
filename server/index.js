@@ -104,7 +104,7 @@ function init () {
   const corsOpts = {
     origin: function (origin, cb) {
       const url = new URL(origin)
-      if (url.hostname === 'localhost') {
+      if (url.hostname === 'localhost' || url.hostname === 'caloogle.xyz') {
         cb(null, true)
       } else {
         cb(new Error('Not allowed by CORS'))

@@ -8,6 +8,6 @@ But you know that since you've [hacked the Gibson](https://www.youtube.com/watch
 
 Find the XSS vulnerability in the search input field. You can use any HTML tag to run the `success()` function.
 
-<iframe src='http://localhost:4160'></iframe>
+<iframe src='http://caloogle.xyz:4160'></iframe>
 
 Before you move on to the next exercise, remember to copy your "attack input" into the `SOLUTIONS.md` file.

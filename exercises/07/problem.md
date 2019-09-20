@@ -22,6 +22,6 @@ router.get('/search', async (req, res) => {
 
 Find the XSS vulnerability in the search input field. You should **not** use a `<script>` tag in this attack.
 
-<iframe src='http://localhost:4070'></iframe>
+<iframe src='http://caloogle.xyz:4070'></iframe>
 
 Before you move on to the next exercise, remember to copy your "attack input" into the `SOLUTIONS.md` file.
