@@ -1,5 +1,5 @@
 const { createServer } = require('../common/server')
-// const { htmlAttributeEscape } = require('../common/hackoogle')
+// const { htmlAttributeEscape } = require('../common/caloogle')
 
 const { router } = createServer(4160, __dirname)
 
@@ -10,7 +10,7 @@ const comments = [
 ]
 
 router.get('/', async (req, res) => {
-  res.render('hackoogle-guestbook-page', { comments })
+  res.render('caloogle-guestbook-page', { comments })
 })
 
 router.post('/comment', async (req, res) => {

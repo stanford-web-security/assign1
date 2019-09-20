@@ -26,7 +26,7 @@ router.get('/search', async (req, res) => {
   q = htmlElementEscape(q)
 
   const results = await getResults(q)
-  res.render('hackoogle-search-page', { q, results })
+  res.render('caloogle-search-page', { q, results })
 })
 ```
 

@@ -1,20 +1,22 @@
-<%- include('head') -%>
+<%- include('head2') -%>
 
 <div class='search-page'>
   <div class='header clearfix'>
     <h2 class='logo'>
       <a href='/'>
-        <%- include('hackoogle-logo') %>
+        <%- include('caloogle-logo') %>
       </a>
     </h2>
 
     <form action='/search'>
-      <input class='searchInput' type='text' name='q' value='<%= q %>' />
-      <button type='submit'>Search</button>
+      <input class='searchInput' type='text' name='q' value='<%= rawQ %>' />
+      <button type='submit'><%= searchText %></button>
     </form>
   </div>
 
-  <h3>Results for <%- q %>:</h3>
+  <p><%= languagesText %>: <a href="<%= enUrl.pathname + enUrl.search %>">English</a> • <a href="<%= esUrl.pathname + esUrl.search %>">Spanish</a> • <a href="<%= deUrl.pathname + deUrl.search %>">German</a></p>
+
+  <h3><%= resultsForText %> <%= rawQ %>:</h3>
 
   <div class='results'>
     <% results.forEach(result => { %>

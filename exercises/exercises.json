@@ -34,5 +34,5 @@
 
   { "heading": true, "name": "Congrats" },
 
-  { "id": 18, "name": "A Penny For Your Thoughts" }
+  { "id": 18, "server": false, "name": "A Penny For Your Thoughts" }
 ]

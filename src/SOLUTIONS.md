@@ -63,7 +63,7 @@ router.get('/search', async (req, res) => {
   q = ???
 
   const results = await getResults(q)
-  res.render('hackoogle-search-page', { q, results })
+  res.render('caloogle-search-page', { q, results })
 })
 ```
 
@@ -90,7 +90,7 @@ router.get('/search', async (req, res) => {
   q = ???
 
   const results = await getResults(q)
-  res.render('hackoogle-search-page', { q, results })
+  res.render('caloogle-search-page', { q, results })
 })
 ```
 

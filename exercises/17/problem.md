@@ -11,7 +11,7 @@ Your competitor is using an open source Guestbook package, and you were able to 
 ```js
 router.get('/', async (req, res) => {
   const comments = await getCommentsFromDatabase()
-  res.render('hackoogle-guestbook-page', { comments })
+  res.render('caloogle-guestbook-page', { comments })
 })
 
 router.post('/comment', async (req, res) => {
