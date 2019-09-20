@@ -29,6 +29,7 @@ window.addEventListener('message', async e => {
   const $nextExerciseLink = document.querySelector(`[data-exercise='${id + 1}']`)
   if ($nextExerciseLink) {
     $nextExerciseLink.classList.remove('disabled')
+    $nextExerciseLink.classList.add('pulse', 'animated', 'infinite')
   }
 
   try {

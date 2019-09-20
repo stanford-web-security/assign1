@@ -1,4 +1,4 @@
-Your competitor is fed up with the lackluster results from the UC Berkeley graduate and decide to hire a student who has completed [CS 253: Web Security](https://cs253.stanford.edu) at Stanford instead. They are able to quickly implement a foolproof `htmlElementEscape()` function which defeats your shenanigans once and for all.
+Your competitor is fed up with the lackluster results from the UC Berkeley graduate and decide to hire a Stanford student who has completed [CS 253: Web Security](https://cs253.stanford.edu) instead. They are able to quickly implement a foolproof `htmlElementEscape()` function which defeats your shenanigans once and for all.
 
 Please read the code for `htmlElementEscape()` and ensure you understand how it works in detail.
 

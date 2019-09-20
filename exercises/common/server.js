@@ -29,7 +29,11 @@ function createServer (port, serverDirname) {
     return 'next'
   })
 
+  // parse application/x-www-form-urlencoded
   router.use(bodyParser.urlencoded({ extended: false }))
+
+  // parse application/json
+  router.use(bodyParser.json())
 
   app.listen(port, '127.0.0.1')
 

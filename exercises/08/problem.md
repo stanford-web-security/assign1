@@ -12,9 +12,13 @@ Note: Do not attempt to look at the server's **server-side source code** to see 
 
 ## Goals
 
-1. Find the XSS vulnerability. You can use any HTML tag you like.
+1. Find the XSS vulnerability in the search input field. You can use any HTML tag you like.
 
 1. Write out the code that you believe the server must be executing to process the input.
+
+## Tip
+
+Try submitting various inputs and then look at the HTML source of the `<iframe>` to figure out what their sanitization code must be doing.
 
 <iframe src='http://localhost:4080'></iframe>
 

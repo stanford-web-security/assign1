@@ -1,8 +1,6 @@
 ## You made it to Assignment 1! ✨
 
-If you're reading this, then you were able to get everything set up. Nice work!
-
-You can see the exercies you'll need to complete listed to the left.
+If you're reading this, then you were able to get everything set up. Nice work! You can see the exercies you'll need to complete listed to the left.
 
 ## What just happened to your computer?
 

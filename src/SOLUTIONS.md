@@ -46,87 +46,98 @@ TODO: Replace this with your solution.
 
 # 8. Angle of Death
 
-Find the XSS vulnerability. You can use any HTML tag you like.
+Attack input:
 
 ```
 TODO: Replace this with your solution.
 ```
 
-Write out the code that you believe the server must be executing to process the input.
+Server code:
 
 ```
-TODO: Replace this with your solution.
+router.get('/search', async (req, res) => {
+  let q = req.query.q
+  if (q == null) q = ''
+
+  // TODO: Replace this with your solution.
+  q = ???
+
+  const results = await getResults(q)
+  res.render('hackoogle-search-page', { q, results })
+})
 ```
 
-# 9. Finally, Some Working Code
+# 9. All in a Day's Work
 
 N/A
 
-# 10. The Attributes of Success
+# 10. In the Wrong Place at the Wrong Time
+
+Attack input:
 
 ```
 TODO: Replace this with your solution.
 ```
 
-# 11. replace first double quote
+Server code:
+
+```
+router.get('/search', async (req, res) => {
+  let q = req.query.q
+  if (q == null) q = ''
+
+  // TODO: Replace this with your solution.
+  q = ???
+
+  const results = await getResults(q)
+  res.render('hackoogle-search-page', { q, results })
+})
+```
+
+# 11. You Can't Win 'em All
 
 ```
 TODO: Replace this with your solution.
 ```
 
-# 12. replace all double quotes
+# 12. When All is Said and Done
 
 ```
 TODO: Replace this with your solution.
 ```
 
-# 13. no quotes around attribute, lang param
+# 13. When You Want a Job Done Right
 
-Instead of pasting the "attack input" like in previous solutions, for this
-problem, please paste the URL that causes the XSS to run when the victim visits:
+N/A
 
-```
-TODO: Replace this with your solution.
-```
+# 14. Here Today and Gone Tomorrow
 
-# 14. no protection
+Attack URL:
 
 ```
 TODO: Replace this with your solution.
 ```
 
-# 15. full html escape
+# 15. The Early Bird Catches the Worm
 
 ```
 TODO: Replace this with your solution.
 ```
 
-# 16. replace </
+# 16. Tying Up Loose Ends
 
 ```
 TODO: Replace this with your solution.
 ```
 
-# 17. TODO
+# 17. Take a Page Out of Their Book
+
+Attack code:
 
 ```
 TODO: Replace this with your solution.
 ```
 
-# 18. TODO
+# 18. Congrats
 
-```
-TODO: Replace this with your solution.
-```
-
-# 19. Short Answer Questions
-
-There are some JavaScript functions that can never safely use untrusted data as input, even if escaped with `htmlEscape()`. For example:
-
-```js
-<script>
-window.setInterval('...EVEN IF YOU ESCAPE UNTRUSTED DATA YOU ARE XSSED HERE...');
-</script>
-```
-
-Why?
+N/A

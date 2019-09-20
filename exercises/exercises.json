@@ -13,22 +13,26 @@
   { "id": 6, "name": "A Picture is Worth a Thousand Words" },
   { "id": 7, "name": "Between a Rock And a Hard Place" },
   { "id": 8, "name": "Angle of Death" },
-  { "id": 9, "server": false, "name": "Finally, Some Working Code" },
+  { "id": 9, "server": false, "name": "All in a Day's Work" },
 
   { "heading": true, "name": "Cross Site Scripting into HTML Attributes" },
 
-  { "id": 10, "name": "The Attributes of Success" },
-  { "id": 11, "name": "TODO: replace first double quote" },
-  { "id": 12, "name": "TODO: replace all double quotes" },
-  { "id": 13, "name": "TODO: no quotes around attribute, lang param" },
+  { "id": 10, "name": "In the Wrong Place at the Wrong Time" },
+  { "id": 11, "name": "You Can't Win 'em All" },
+  { "id": 12, "name": "When All is Said and Done" },
+  { "id": 13, "server": false, "name": "When You Want a Job Done Right" },
+  { "id": 14, "name": "Here Today and Gone Tomorrow" },
 
-  { "heading": true, "name": "TODO: Cross Site Scripting into <script> tags" },
+  { "heading": true, "name": "Cross Site Scripting into <script> Tags" },
 
-  { "id": 14, "name": "TODO: use attribute escape in script variable" },
-  { "id": 15, "name": "TODO: replace </" },
+  { "id": 15, "name": "The Early Bird Catches the Worm" },
+  { "id": 16, "name": "Tying Up Loose Ends" },
 
-  { "heading": true, "name": "Stored XSS" },
+  { "heading": true, "name": "Cross Site Scripting into Event Handlers" },
 
-  { "id": 16, "name": "vulnerable guestbook" },
-  { "id": 17, "name": "TODO" }
+  { "id": 17, "name": "Take a Page Out of Their Book" },
+
+  { "heading": true, "name": "Congrats" },
+
+  { "id": 18, "name": "A Penny For Your Thoughts" }
 ]

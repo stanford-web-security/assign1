@@ -12,7 +12,7 @@ router.get('/search', async (req, res) => {
   if (q == null) q = ''
 
   const rawQ = q
-  q = q.replace(/"/, '')
+  q = q.replace(/"/, '&quot;')
 
   const results = await getResults(q)
   res.render('hackoogle-search-page2', { q, rawQ, results })

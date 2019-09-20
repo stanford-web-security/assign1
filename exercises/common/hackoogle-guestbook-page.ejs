@@ -7,7 +7,7 @@
 
   <h2><marquee>Welcome to our Guestbook</marquee></h2>
 
-  <form class='heartBeat' action='/comment' method='POST'>
+  <form class='animated pulse infinite commentForm'>
     <h2>Post a comment</h2>
     <input class='commentInput' type='text' name='comment' />
     <br />
@@ -18,10 +18,45 @@
 
   <h2>Comments</h2>
   <%_ comments.forEach(comment => { _%>
-    <p>
-      <%- comment %>
+    <p onmouseover='wiggle(<%= comment.id %>)'>
+      <%= comment.text %>
     </p>
   <%_ }) _%>
+
+  <script>
+    window.wiggle = (id) => {
+      const e = window.event
+
+      console.log(`wiggling comment ${id}`)
+
+      e.target.classList.add('animated', 'jello')
+      setTimeout(() => {
+        e.target.classList.remove('animated', 'jello')
+      }, 1000)
+    }
+
+    const $commentForm = document.querySelector('.commentForm')
+    const $commentInput = document.querySelector('.commentInput')
+
+    $commentForm.addEventListener('submit', async e => {
+      e.preventDefault()
+
+      const comment = {
+        text: $commentInput.value,
+        id: null // let server fill this in
+      }
+
+      await window.fetch('/comment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(comment)
+      })
+
+      window.location.reload()
+    })
+  </script>
 </div>
 
 <%- include('foot') -%>

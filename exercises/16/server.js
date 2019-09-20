@@ -1,25 +1,26 @@
 const { createServer } = require('../common/server')
-// const { htmlAttributeEscape } = require('../common/hackoogle')
+const { getResults, htmlAttributeEscape, getLanguageVarsFromRequest } = require('../common/hackoogle')
 
-const { router } = createServer(4160, __dirname)
-
-const comments = [
-  '💿 Party Like It\'s 1999 💿',
-  'YOU\'VE GOT MAIL 📬 📬 I\'m posting on your guestbook!',
-  'This guestbook is hotttt 🔥🔥🔥'
-]
+const { router } = createServer(4150, __dirname)
 
 router.get('/', async (req, res) => {
-  res.render('hackoogle-guestbook-page', {
-    comments
-  })
+  res.render('hackoogle-home-page')
 })
 
-router.post('/comment', async (req, res) => {
-  const comment = req.body.comment
-  if (comment == null) throw new Error('comment cannot be empty')
+router.get('/search', async (req, res) => {
+  let q = req.query.q
+  if (q == null) q = ''
 
-  comments.push(comment)
+  const rawQ = q
+  q = htmlAttributeEscape(q).replace(/<\//g, '')
 
-  res.redirect('/')
+  const languageVars = getLanguageVarsFromRequest(req)
+
+  const results = await getResults(q)
+  res.render('hackoogle-search-page5', {
+    q,
+    rawQ,
+    results,
+    ...languageVars
+  })
 })

@@ -1,21 +1,23 @@
-Your competitor's `htmlElementEscape()` function is working quite well and you haven't been able to attack their users in the wild ever since they deployed it. It's a lot harder to be a disruptive startup when you can't XSS your competitors and now you're not so sure you're going to be able to get that next round of funding. This is a huge bummer.
+Your competitor's `htmlElementEscape()` function is working quite well and you haven't been able to attack their users in the wild ever since they deployed it. It's a lot harder to disrupt the status quo like world-changing startup when you can't XSS your competitors. Now, you're beginning to worry that you might not be able to get that next round of funding. This is a huge bummer.
 
-Fortunately, your competitor has just deployed the new version of their site that includes a new feature. Perhaps there's a new XSS vulnerability in it?
+Fortunately, your competitor just deployed a new version of their site that includes a brand new feature. Perhaps there's a new XSS vulnerability in it?
 
 The feature is called "Competitor Comparison" and it includes links to competitor search engines so that users can compare search results and decide which search engine is best. Clearly, they feel pretty confident that their results are the best.
 
-They appear to be using the `htmlElementEscape()` function to generate the HTML for these links so you think they're guaranteed to be safe. After all, that function was supposed to be foolproof.
+They appear to be using the foolproof `htmlElementEscape()` function written for them by the Stanford CS 253 student to generate the HTML for these links so you think they're guaranteed to be safe.
 
-Or was it?
+But upon closer inspection, it appears that they're not using the function correctly. Time to teach them another lesson!
 
-## Goal
+## Goals
 
-Find the XSS vulnerability in their code. You can use any HTML that you want.
+1. Find the XSS vulnerability in the search input field. You can use any HTML you want to run the `success()` function.
+
+1. Write out the code that you believe the server must be executing to process the input.
 
 ## Tip
 
-You may need to look at the HTML source of the `<iframe>`.
+Try submitting various inputs and then look at the HTML source of the `<iframe>` to figure out what their sanitization code must be doing.
 
 <iframe src='http://localhost:4100'></iframe>
 
-Before you move on to the next exercise, remember to copy your "attack input" into the `SOLUTIONS.md` file.
+Before you move on to the next exercise, remember to copy your "attack input" as well as your server code into the `SOLUTIONS.md` file.

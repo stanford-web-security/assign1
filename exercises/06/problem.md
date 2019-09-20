@@ -20,7 +20,7 @@ router.get('/search', async (req, res) => {
 
 ## Goal
 
-Find the XSS vulnerability. You should **not** use a `<script>` tag in this attack.
+Find the XSS vulnerability in the search input field. You should **not** use a `<script>` tag in this attack.
 
 <iframe src='http://localhost:4060'></iframe>
 
