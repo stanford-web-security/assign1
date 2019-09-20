@@ -54,13 +54,13 @@ TODO: Replace this with your solution.
 
 Server code:
 
-```
+```js
 router.get('/search', async (req, res) => {
   let q = req.query.q
   if (q == null) q = ''
 
   // TODO: Replace this with your solution.
-  q = ???
+  // q = ???
 
   const results = await getResults(q)
   res.render('caloogle-search-page', { q, results })
@@ -81,13 +81,13 @@ TODO: Replace this with your solution.
 
 Server code:
 
-```
+```js
 router.get('/search', async (req, res) => {
   let q = req.query.q
   if (q == null) q = ''
 
   // TODO: Replace this with your solution.
-  q = ???
+  // q = ???
 
   const results = await getResults(q)
   res.render('caloogle-search-page', { q, results })
@@ -134,8 +134,8 @@ TODO: Replace this with your solution.
 
 Attack code:
 
-```
-TODO: Replace this with your solution.
+```js
+// TODO: Replace this with your solution.
 ```
 
 # 18. Congrats
