@@ -58,3 +58,7 @@ When you're ready to submit your work, run the commands:
 git commit -am 'submit'
 git push
 ```
+
+## Questions?
+
+Come to office hours or open an issue in the [discussion](https://github.com/stanford-web-security/discussion/issues) repository.
