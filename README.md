@@ -6,6 +6,12 @@
 
 Welcome to Assignment 1 for [CS 253: Web Security](https://cs253.stanford.edu). ✨
 
+We're doing client-side attacks! This assignment is all about Cross Site Scripting (XSS) vulnerabilities. Your goal is to come up with "attack inputs" that when entered into websites vulnerable to cross-site scripting (XSS) attacks you are able to execute any code you want in the victim's browser.
+
+The assignment takes the form of an interactive workshop that you'll run in your browser. This is what it looks like:
+
+![](img/screenshot.png)
+
 ## Prepare
 
 ### Get the starter code

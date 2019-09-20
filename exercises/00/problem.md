@@ -18,7 +18,7 @@ Keep in mind when you design your attacks that you are attacking a server runnin
 
 ## Another note for the extra, extra devious among you
 
-We haven't attempted to secure this workshop from *you*. You have all the source code and it's running on your machine, so you are able to freely examine the source code if you're curious how this workshop is designed. This means that it is possible for you to fake calls to `success()` or to modify the local state file to instantly "finish" all the challenges. I ask you to avoid trying this since it'll just make the assignments less fun for you if you read ahead. Since you have to submit your solutions in a separate text file anyway, this doesn't really help you anyway.
+We haven't attempted to secure this workshop from *you*. You have all the source code and it's running on your machine, so you are technically able to examine the source code. We ask you to avoid doing this since it'll just make the assignments less fun for you. It is also possible for you to fake calls to `success()` or to modify the local state file to instantly "finish" all the challenges. Again, this wouldn't be much fun for you, so please don't do it. Since you have to submit your solutions in a separate text file anyway, this doesn't really help you anyway.
 
 ## Let's get going!
 
