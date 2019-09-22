@@ -10,7 +10,13 @@ In addition to this workshop HTTP server, we've also running many other local HT
 
 ## What is your goal?
 
-Since we're doing client-side attacks in this assignment, your goal is to come up with "attack inputs" that when entered into websites vulnerable to cross-site scripting (XSS) attacks you are able to execute any code you want in the victim's browser. Usually, this will involve you testing the "attack input" by entering it into a form input field, or as a URL parameter, etc. Once you can execute code in the victim's browser, you can prove this by calling the `success()` function that we've created for you. Remember to save the attack inputs which you produce into the `SOLUTIONS.md` file. This is what you will submit for grading.
+We're doing client-side attacks in this assignment. Your goal is to come up with "attack inputs" that when entered into vulnerable websites allow you to execute code in the target's browser.
+
+With Reflected XSS, you want to find a way to encode the attack input into a URL that can be sent to a target. When the URL is visited, your attack input is extracted from the URL by the server-side (or potentially client-side) code and executed in the target's browser.
+
+With Stored XSS, you want to find a way to get your attack input stored more permanently, e.g. in the server's database, so that when your target visits a page constructed using this data at some point in the future, your attack code will execute in their browser.
+
+Usually, you can test your "attack inputs" by entering them into a form input field or encoding them into a URL parameter. Once you can execute code in the victim's browser, you can prove this by calling the `success()` function that we've created for you. Remember to save the attack inputs which you produce into the `SOLUTIONS.md` file. This is what you will submit for grading.
 
 ## A quick note for the devious among you (all of you?)
 
