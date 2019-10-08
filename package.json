@@ -44,7 +44,6 @@
     "url": "git://github.com/stanford-web-security/assign1.git"
   },
   "scripts": {
-    "generate-starter-inputs": "node ./tools/generate-starter-inputs",
     "start": "node server",
     "lint": "standard | snazzy && standard-markdown **/*.md",
     "lint-fix": "standard --fix | snazzy && standard-markdown **/*.md --fix",
