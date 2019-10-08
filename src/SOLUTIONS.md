@@ -115,7 +115,7 @@ N/A
 Attack URL:
 
 ```
-TODO: Replace this with your solution.
+TODO: Replace this with your solution. **This should be a URL!**
 ```
 
 # 15. The Early Bird Catches the Worm
