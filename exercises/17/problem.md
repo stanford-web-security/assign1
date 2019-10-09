@@ -33,11 +33,11 @@ If you can pull off a Stored XSS attack, then all future visitors to their Guest
 
 Time to show your competitor the power of Stored XSS!
 
-## Goal
+## Goals
 
-- Find the XSS vulnerability in their code. You can use any HTML that you want.
+1. Find the XSS vulnerability in their code. You can use any HTML that you want.
 
-- Your solution should be a code snippet that, when pasted into the browser DevTools, will add a comment to the server's database
+1. Your solution should be a code snippet that, when pasted into the browser DevTools, will add a comment to the server's database
 
 ## Tips
 

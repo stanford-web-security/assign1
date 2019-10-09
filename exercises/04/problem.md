@@ -24,4 +24,4 @@ Can you think of a way to defeat their improved sanitization code and get your `
 
 <iframe src='http://caloogle.xyz:4040'></iframe>
 
-Before you move on to the next exercise, remember to copy your "attack input" into the `SOLUTIONS.md` file.
+Before you move on to the next exercise, remember to copy your "attack input" (the malicious input string, not the URL) into the `SOLUTIONS.md` file.
