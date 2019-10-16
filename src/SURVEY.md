@@ -4,11 +4,11 @@
 
 TODO: Replace this with your response
 
-## What was your favorite part of this assignment?
+## What was your favorite part of this assignment and why?
 
 TODO: Replace this with your response
 
-## What was your least favorite part of this assignment?
+## What was your least favorite part of this assignment and why?
 
 TODO: Replace this with your response
 
