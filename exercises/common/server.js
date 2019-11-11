@@ -14,12 +14,12 @@ function createServer (port, serverDirname) {
   const app = express()
 
   app.set('view engine', 'ejs')
-  app.set('views', [serverDirname, COMMON_PATH])
+  app.set('views', [serverDirname, COMMON_PATH, ROOT_PATH])
 
   const router = new Router()
   app.use(router)
 
-  router.use(express.static(join(serverDirname, '..', 'static')))
+  router.use(express.static(join(serverDirname, 'static')))
   router.use(express.static(join(COMMON_PATH, 'static')))
   router.use(express.static(join(ROOT_PATH, 'static')))
 
