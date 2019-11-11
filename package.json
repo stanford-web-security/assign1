@@ -24,15 +24,15 @@
     "remark-external-links": "^5.0.0",
     "remark-highlight.js": "^5.1.1",
     "remark-html": "^10.0.0",
-    "remark-preset-lint-recommended": "^3.0.3",
-    "tap-spec": "^5.0.0",
-    "tape": "^4.11.0"
+    "remark-preset-lint-recommended": "^3.0.3"
   },
   "devDependencies": {
     "nodemon": "^1.19.2",
     "snazzy": "^8.0.0",
     "standard": "^14.2.0",
-    "standard-markdown": "^5.1.0"
+    "standard-markdown": "^5.1.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
   },
   "homepage": "https://cs253.stanford.edu",
   "keywords": [],
@@ -44,9 +44,9 @@
     "url": "git://github.com/stanford-web-security/assign1.git"
   },
   "scripts": {
-    "start": "node server",
     "lint": "standard | snazzy && standard-markdown **/*.md",
     "lint-fix": "standard --fix | snazzy && standard-markdown **/*.md --fix",
+    "start": "node server",
     "test": "npm run lint && tape test/*.js | tap-spec",
     "watch": "nodemon --ext js,json,css,ejs,md -- --no-open"
   }
