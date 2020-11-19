@@ -16,7 +16,7 @@ Please save the **attack URL** that causes an XSS when the victim visits it.
 
 If you've found a solution that works, you should be able to paste this **attack URL** into a new tab and see the attack execute.
 
-Lesson learned: even if a server would never generate an vulnerable URL and place it into the HTML, that's no guarante that an attacker won't find this vulnerable URL and entice users to visit it somehow.
+Lesson learned: even if a server would never generate an vulnerable URL and place it into the HTML, that's no guarantee that an attacker won't find this vulnerable URL and entice users to visit it somehow.
 
 <iframe src='http://caloogle.xyz:4140'></iframe>
 
