@@ -23,3 +23,7 @@ Can you think of a way to defeat their improved sanitization code and get your `
 <iframe src='http://caloogle.xyz:4050'></iframe>
 
 Before you move on to the next exercise, remember to copy your "attack input" into the `SOLUTIONS.md` file.
+
+## Note
+
+You must use a `<script>` tag in your solution.

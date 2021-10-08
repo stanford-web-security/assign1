@@ -21,3 +21,7 @@ If you were truly evil, you could share that URL on social media and when innoce
 You should try copying this URL and opening it into a new tab and confirm that your attack code runs immediately when the page is loaded. This is the power of Reflected XSS!
 
 Before you move on to the next exercise, remember to copy your "attack input" (the malicious input string, not the URL) into the `SOLUTIONS.md` file so you can submit it and get credit.
+
+## Note
+
+You must use a `<script>` tag in your solution.

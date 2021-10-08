@@ -23,3 +23,7 @@ You should be able to make a small change to your "attack input" from the last e
 <iframe src='http://caloogle.xyz:4020'></iframe>
 
 Before you move on to the next exercise, remember to copy your "attack input" (the malicious input string, not the URL) into the `SOLUTIONS.md` file.
+
+## Note
+
+You must use a `<script>` tag in your solution.
