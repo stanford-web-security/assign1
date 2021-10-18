@@ -24,4 +24,4 @@ Before you move on to the next exercise, remember to copy your "attack input" (t
 
 ## Note
 
-You must use a `<script>` tag in your solution.
+Your solution must involve a `<script>` tag.
